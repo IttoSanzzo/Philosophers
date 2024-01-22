@@ -1,13 +1,13 @@
 # **************************************************************************** #
-#									       #
-#							  :::	   ::::::::    #
+#                                                                              #
+#                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
-#						      +:+ +:+	      +:+      #
-#    By: marcosv2 <marcosv2@student.42.rio>	    +#+  +:+	   +#+	       #
-#						  +#+#+#+#+#+	+#+	       #
-#    Created: 2024/01/19 21:52:10 by marcosv2	       #+#    #+#	       #
-#    Updated: 2024/01/22 14:40:06 by marcosv2         ###   ########.fr        #
-#									       #
+#                                                     +:+ +:+         +:+      #
+#    By: marcosv2 <marcosv2@student.42.rio>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/01/22 16:46:36 by marcosv2          #+#    #+#              #
+#    Updated: 2024/01/22 16:52:59 by marcosv2         ###   ########.fr        #
+#                                                                              #
 # **************************************************************************** #
 
 # Comamad Miscs
@@ -22,13 +22,20 @@ C_PUTS	= printf
 
 # Dirs
 
-D_HDRS	= -I ./includes/
-D_SRCS	= srcs/
+D_HDRS	= -I ./
+D_SRCS	= ./
 D_OBJS	= objs/
 
 # Sources & Objects
 
-N_MAIN	= $(shell ls $(D_SRCS)/ | grep -E ".+\.c")
+N_MAIN	=	ft_utils.c	\
+			main.c		\
+			ph_acts.c	\
+			ph_agora.c	\
+			ph_exit.c	\
+			ph_extra.c	\
+			ph_inits.c	\
+			ph_loner.c
 F_SRCS	= $(addprefix $(D_SRCS)/, $(N_MAIN))
 N_OBJS	= $(N_MAIN:.c=.o)
 
