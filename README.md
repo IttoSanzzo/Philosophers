@@ -1,5 +1,5 @@
 <div align='center'> <h1>Philosophers</h1> </div>
-<div align='center'> <img src="./assets/Example.png"> </div>
+<div align='center'> <img src="https://i.imgur.com/viLcwCm.png"> </div>
 <p align='center'>I never thought philosophy would be so deadly</p>
 <p align='center'>Dining philosophers problem's solution for 42 cursus project</p>
 
