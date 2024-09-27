@@ -1,25 +1,26 @@
 <div align='center'> <h1>Philosophers</h1> </div>
+<div align='center'> <img src="./assets/Example.png"> </div>
 <p align='center'>I never thought philosophy would be so deadly</p>
 <p align='center'>Dining philosophers problem's solution for 42 cursus project</p>
 
 ## <h1 align='center'>Index</h1>
+
 1. [General idea](#General_idea)
 2. [Race Conditions and Mutexes](#RaceConditions&mutexes)
-	- [Race Condition](#RaceConditions)
-	- [Mutexes](#Mutexes)
+    - [Race Condition](#RaceConditions)
+    - [Mutexes](#Mutexes)
 3. [Step to Step Guide](#Guide)
-	- [Step 1: Checking the input](#step1)
-	- [Step 2: Creating the structures](#step2)
-	- [Step 3: Initialization and allocation](#step3)
-	- [Step 4: Structuring the philo's routine, the supervisor and the monitor](#step4)
-	- [Step 5: Clearing the memory](#step5)
+    - [Step 1: Checking the input](#step1)
+    - [Step 2: Creating the structures](#step2)
+    - [Step 3: Initialization and allocation](#step3)
+    - [Step 4: Structuring the philo's routine, the supervisor and the monitor](#step4)
+    - [Step 5: Clearing the memory](#step5)
 4. [Utils Functions](#utilsfunc)
-	- [clear data](#clear_data)
-	- [ft_exit](#ft_exit)
-	- [error](#error)
-	- [get_time](#get_time)
-	- [ft_usleep](#ft_usleep)
-
+    - [clear data](#clear_data)
+    - [ft_exit](#ft_exit)
+    - [error](#error)
+    - [get_time](#get_time)
+    - [ft_usleep](#ft_usleep)
 
 <div align='center'><h1><a name='General_idea'>General idea</a></h1></div>
 The mandatory part of this project asks us to solve the <a href='https://en.wikipedia.org/wiki/Dining_philosophers_problem'>dining philosophers problem</a> and 
@@ -82,19 +83,20 @@ int main()
 
 If you try to execute the code above you will see that you'll never get 2.000.000 that's because a race condition is happening. To better understand what's happening let's take a look at the assembly of the "cont++" instruction.
 To increase a variable by 1 the assembly execute 3 operations:
-- read, simply get the variable value 
-- increase, increment locally the variable
-- write, updates the value of the variable
-<br>
-Assume that the current value of cont is 23, let's see what the assembly would do:
-<pre>
-<code>
-read: 23
-increase: 23
-write: 24
-</code>
-</pre>
-That happens when we simply do cont++ in a non multithreaded program, let's see what happens in a mutithreaded program when a race condition happens:
+
+-   read, simply get the variable value
+-   increase, increment locally the variable
+-   write, updates the value of the variable
+    <br>
+    Assume that the current value of cont is 23, let's see what the assembly would do:
+    <pre>
+    <code>
+    read: 23
+    increase: 23
+    write: 24
+    </code>
+    </pre>
+    That happens when we simply do cont++ in a non multithreaded program, let's see what happens in a mutithreaded program when a race condition happens:
 
 <pre>
 <code>
@@ -107,7 +109,7 @@ That happens when we simply do cont++ in a non multithreaded program, let's see 
 </code>
 </pre>
 
-At this point the thread B is paused, because is doing the same operation as A and it's restarted after a while, but while B is paused A continue to increase the cont value (for the example we say it reaches 30). Let's se what happens when B restart: 
+At this point the thread B is paused, because is doing the same operation as A and it's restarted after a while, but while B is paused A continue to increase the cont value (for the example we say it reaches 30). Let's se what happens when B restart:
 
 <pre>
 <code>
@@ -254,7 +256,7 @@ int main()
 </code>
 </pre>
 
-The first parameter of this function is the pointer to the tid variable (of type pthread_t), the second one is nullable (as for pthread_mutex_init we don't have to specify attributes in this project), the third parameter is the pointer to the function that the thread is going to execute and the forth parameter is the pointer to the datas that we give to the routine function. Please note that the routine is always a "void *" function and the datas <b><i>must</b></i> be given to it through a pointer to the data that we are trying to pass.
+The first parameter of this function is the pointer to the tid variable (of type pthread_t), the second one is nullable (as for pthread_mutex_init we don't have to specify attributes in this project), the third parameter is the pointer to the function that the thread is going to execute and the forth parameter is the pointer to the datas that we give to the routine function. Please note that the routine is always a "void \*" function and the datas <b><i>must</b></i> be given to it through a pointer to the data that we are trying to pass.
 
 <h3><a name='step4'>Step 4: Structuring the philo's routine, the supervisor and the monitor</a></h3>
 
@@ -338,7 +340,6 @@ int	error(char *str, t_data *data)
 }
 </code>
 </pre>
-
 
 <li><h3><a name='get_time'>get_time</a></h3></li>
 A fucntion to take the current time in milliseconds.
