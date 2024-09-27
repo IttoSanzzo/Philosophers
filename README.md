@@ -36,7 +36,9 @@ philosophers sits around it and each of them brings a fork and let's say that th
 At this point we know that a philosopher can do three things: eat, think or sleep; but in order to eat he has to pick two forks (the one on his right and the one on his left).
 Let's use a picture to have a more concrete idea of what we are talking about:
 <br><br>
+<p align="center">
 <a href='https://en.wikipedia.org/wiki/Dining_philosophers_problem#/media/File:An_illustration_of_the_dining_philosophers_problem.png'><img src='https://user-images.githubusercontent.com/59456000/198906008-4135d5d2-de53-4a8b-9c24-744181f04851.png' width='275' heigth='275'></img></a>
+</p>
 <br><br>
 Since I'm not a big fan of philosophy i don't know a single name one these guys up here so I'll give them some more familiar names and starting from the bottom left
 one they will be: Roberto Legno, Thiago, Marcello, Lapo Raspanti and Rekkless.<br>
